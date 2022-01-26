@@ -66,7 +66,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode counsel ivy benchmark-init neotree undo-tree ace-window which-key smart-mode-line gruvbox-theme use-package)))
+   '(blacken pyvenv py-isort python-mode lsp-pyright which-key use-package undo-tree smart-mode-line neotree lsp-ui lsp-ivy gruvbox-theme dap-mode counsel benchmark-init)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
