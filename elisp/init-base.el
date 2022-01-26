@@ -59,7 +59,7 @@
 (require 'use-package)
 
 
-(provide 'base)
+(provide 'init-base)
 
 
 

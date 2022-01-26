@@ -2,4 +2,4 @@
   :init (global-undo-tree-mode)
 )
 
-(provide 'action-undo-tree)
+(provide 'init-undo-tree)

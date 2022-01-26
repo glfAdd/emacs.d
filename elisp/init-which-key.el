@@ -13,4 +13,4 @@
   (setq which-key-idle-delay 1)
 )
 
-(provide 'key-mapping-bingd)
+(provide 'init-which-key)

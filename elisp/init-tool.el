@@ -8,4 +8,4 @@
 )
 
 
-(provide 'tool)
+(provide 'init-tool)

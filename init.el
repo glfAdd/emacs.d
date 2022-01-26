@@ -2,37 +2,44 @@
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
 
 ;; Base configuration
-(require 'base)
+(require 'init-base)
 
 ;; Theme
-(require 'theme)
+(require 'init-gruvbox-theme)
 
 ;; beautify mode-line
-(require 'mode-line)
+(require 'init-smart-mode-line)
 
 ;; displays the key bindings
-(require 'key-mapping-bingd)
+(require 'init-which-key)
 
 ;; 
-(require 'ace-window)
+(require 'init-ace-window)
 
 ;; 
-(require 'action-undo-tree)
+(require 'init-undo-tree)
 
 ;; 
-(require 'file-tree)
+(require 'init-neotree)
 
 ;; Evil 
-;(require 'vim)
+;(require 'init-vim)
 
 ;; 
-(require 'tool)
+(require 'init-tool)
 
 ;; streamline the operation
-(require 'flexible-action)
+(require 'init-ivy)
 
 ;; 
-(require 'lsp-completion)
+(require 'init-lsp)
+(require 'init-lsp-python)
+(require 'init-lsp-java)
+
+(require 'init-dap)
+(require 'init-dap-python)
+(require 'init-dap-java)
+
 
 
 ; ; 全文补全框架
@@ -47,55 +54,9 @@
 ;        company-yasnippet
 ;        )
 ;       (company-abbrev company-dabbrev)))
-
 ; )
 
 
-; (use-package lsp-pyright
-;   :hook (python-mode . (lambda ()
-;                         (require 'lsp-pyright)
-;                         (lsp-deferred))))
-; (use-package python-mode
-;   :hook (python-mode . lsp-deferred)
-;   :custom
-;   (dap-python-debugger 'debugpy)
-;   :config
-;   (require 'dap-python))
-
-; (use-package pyvenv
-;   :after python-mode
-;   :config
-;   (pyvenv-mode 1))
-
-; (use-package py-isort
-;   :after python
-;   :hook ((python-mode . pyvenv-mode)
-;          (before-save . py-isort-before-save)))
-
-; (use-package blacken
-;   :delight
-;   :hook (python-mode . blacken-mode)
-;   :custom (blacken-line-length 79))
-
-
-
-(require 'dap-python)
-
-
-(dap-register-debug-template "frontend-graphql"
-                             (list :type "python"
-                                   :program "run" ;; this due to the insistence of dap-debug of populating this one with the current file, adding :flask t did nothing for this value.
-                                   :module "flask"
-;                                   :args "--no-debugger --no-reload"
-                                   :cwd "~/Desktop/learn/python"
-                                   :request "launch"
-                                   :environment-variables '(
-                                                            ("FLASK_APP" . "aaaa.py")
-                                                            ("FLASK_ENV" . "development")
-                                                            ("FLASK_DEBUG" . "0"))
-                                   :name "Python :: flask-graphql"
-                                   :hostName "localhost"
-                                   :host "localhost"))
 
 
 
@@ -105,7 +66,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(evil which-key use-package undo-tree smart-mode-line pyvenv python-mode python-black pyenv-mode py-isort neotree lsp-ui lsp-pyright lsp-ivy gruvbox-theme good-scroll flycheck dashboard dap-mode company blacken benchmark-init)))
+   '(dap-mode lsp-treemacs lsp-ivy lsp-ui lsp-mode counsel ivy benchmark-init neotree undo-tree ace-window which-key smart-mode-line gruvbox-theme use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -7,4 +7,4 @@
   (setq evil-want-C-i-jump nil)
   :config
   (evil-mode 1))
-(provide 'vim)
+(provide 'init-vim)

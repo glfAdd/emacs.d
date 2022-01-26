@@ -13,4 +13,4 @@
     (global-set-key [f8] 'neotree-dir))
 )
 
-(provide 'file-tree)
+(provide 'init-neotree)

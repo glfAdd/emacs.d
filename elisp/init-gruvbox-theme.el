@@ -4,4 +4,4 @@
     (load-theme 'gruvbox-dark-soft t)
 )
 
-(provide 'theme)
+(provide 'init-gruvbox-theme)

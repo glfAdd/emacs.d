@@ -3,4 +3,4 @@
   :bind (("C-x o" . 'ace-window))
 )
 
-(provide 'ace-window)
+(provide 'init-ace-window)
