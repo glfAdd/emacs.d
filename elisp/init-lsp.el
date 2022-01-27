@@ -29,4 +29,20 @@
 )
 
 
+
+; ; 全文补全框架
+; (use-package company
+;   :config
+;   (global-company-mode t)
+;   (setq company-idle-delay 0.3) ; 输入时, 代码补全延迟
+;   (setq company-backends
+;     '((company-files
+;        company-keywords
+;        company-capf
+;        company-yasnippet
+;        )
+;       (company-abbrev company-dabbrev)))
+; )
+
+
 (provide 'init-lsp)

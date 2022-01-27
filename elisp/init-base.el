@@ -24,7 +24,8 @@
 (add-hook 'prog-mode-hook #'hs-minor-mode)   ; 编程模式下，可以折叠代码块
 
 
-(setq package-archives '( ; 添加源
+;; 添加源
+(setq package-archives '( 
     ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
     ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
     ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/"))
@@ -44,12 +45,14 @@
 )
 
 
-(unless (package-installed-p 'use-package) ; 使用 use-package 管理扩展
+;; 使用 use-package 管理扩展
+(unless (package-installed-p 'use-package) 
     (package-refresh-contents) 
     (package-install 'use-package)
 )
 
-(eval-and-compile ; use-package 全局设置
+;; use-package 全局设置
+(eval-and-compile 
     (setq use-package-always-ensure t)
     (setq use-package-always-defer t)
     (setq use-package-always-demand nil) 
