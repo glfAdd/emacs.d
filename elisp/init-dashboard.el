@@ -3,7 +3,6 @@
 (use-package dashboard
   :init
   (dashboard-setup-startup-hook)
-  (add-hook 'dashboard-mode-hook 'my/dashboard-banner)
   :config
   (setq dashboard-init-info "Highlord Mograine . The Ashbringer") ;; banner 下文字, 不设置就显示加载时间
   (setq dashboard-startup-banner "~/.emacs.d/banner/text1.txt") ;; banner

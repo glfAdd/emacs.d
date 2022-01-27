@@ -19,11 +19,14 @@
 ;; Change window
 (require 'init-window)
 
+;; tab change
+(require 'init-tab)
+
 ;; Undo list
 (require 'init-undo-tree)
 
 ;; File manger
-(require 'init-file-manager)
+(require 'init-filemanager)
 
 ;; Evil 
 ;(require 'init-vim)
@@ -47,6 +50,8 @@
 (require 'init-dap-python)
 (require 'init-dap-java)
 
+;; keymapping
+(require 'init-keymapping)
 
 
 
