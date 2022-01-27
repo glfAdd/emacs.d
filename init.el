@@ -55,3 +55,16 @@
 
 
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(dashboard which-key use-package undo-tree smart-mode-line pyvenv python-mode py-isort neotree lsp-ui lsp-python-ms lsp-pyright lsp-ivy gruvbox-theme dap-mode counsel blacken benchmark-init)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

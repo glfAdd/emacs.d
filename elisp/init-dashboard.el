@@ -4,21 +4,13 @@
   :init
   (dashboard-setup-startup-hook)
   :config
+  (setq dashboard-set-init-info t)
   (setq dashboard-init-info "Highlord Mograine . The Ashbringer") ;; banner 下文字, 不设置就显示加载时间
+  (setq dashboard-set-footer nil) ;; 底部文字
   (setq dashboard-startup-banner "~/.emacs.d/banner/text1.txt") ;; banner
-  ; (setq dashboard-center-content t) ;; 居中
-  ; (setq dashboard-set-heading-icons t)
-  ; (setq dashboard-set-file-icons t)
-  ; (setq dashboard-set-navigator t)
-  ; (setq dashboard-items '((recents  . 5)
-  ;                       (bookmarks . 5)
-  ;                       (projects . 5)
-  ;                       (agenda . 5)
-  ;                       (registers . 5)))
- ; (setq dashboard-items '((recents  . 5)   ;; 显示多少个最近文件
- ;           (bookmarks . 5)  ;; 显示多少个最近书签
- ;           (projects . 10))) ;; 显示多少个最近项目
+  ; (setq dashboard-center-content t) ;; 选项居中
 )
+
 
 (provide 'init-dashboard)
 
