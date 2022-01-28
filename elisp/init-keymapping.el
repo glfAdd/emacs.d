@@ -12,8 +12,14 @@
 
 
 ;; ivy
-(global-set-key (kbd "M-x") 'counsel-M-x)
-
+(global-set-key (kbd "M-x") 'counsel-M-x) ;; 命令模糊搜索
+(global-set-key (kbd "C-x C-m") 'counsel-M-x) ;; 命令模糊搜索
+(global-set-key (kbd "C-x C-f") 'counsel-find-file) ;; 模糊搜索文件
+(global-set-key (kbd "C-x c k") 'counsel-yank-pop)
+(global-set-key (kbd "C-s") 'swiper) ;; 模糊搜索字符串
+(global-set-key (kbd "C-x s") 'swiper) ;; 模糊搜索字符串
+(global-set-key (kbd "C-x C-r") 'ivy-resume)
+(global-set-key (kbd "C-c n") 'counsel-fzf) ;; 模糊查询
 
 ;; avy
 ; (global-set-key (kbd "C-:") 'avy-goto-char)

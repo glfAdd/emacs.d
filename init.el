@@ -37,6 +37,9 @@
 ;; Streamline the operation
 (require 'init-ivy)
 
+;; 模糊搜索框架
+(require 'init-search)
+
 ;; git
 (require 'init-git)
 
