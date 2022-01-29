@@ -2,7 +2,7 @@
 (use-package neotree 
   :init
   :config
-  (setq-default neo-show-hidden-files t) ;; 显示隐藏文件夹
+  (setq-default neo-show-hidden-files nil) ;; 默认不显示隐藏文件
   :custom
   (neo-theme 'nerd2) ;; 图标样式
 )

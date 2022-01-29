@@ -4,6 +4,9 @@
 ;; Base configuration
 (require 'init-base)
 
+;; icon
+(require 'init-icon)
+
 ;; Theme
 (require 'init-theme)
 
@@ -52,6 +55,17 @@
 (require 'init-dap)
 (require 'init-dap-python)
 (require 'init-dap-java)
+
+;; language chekc (是不是已经安装了)
+(require 'init-check)
+(require 'init-check-python)
+(require 'init-check-java)
+
+;; yasnippet
+(require 'init-code-block)
+
+;; company
+(require 'init-code-block)
 
 ;; keymapping
 (require 'init-keymapping)

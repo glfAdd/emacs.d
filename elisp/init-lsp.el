@@ -10,6 +10,7 @@
 
 (use-package lsp-ui
   :init
+  :after lsp-mode
   :config
   (setq lsp-ui-sideline-delay 0.1) ; 在显示边线之前等待几秒钟
   :commands

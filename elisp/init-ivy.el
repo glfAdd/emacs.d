@@ -6,6 +6,9 @@
   :config
   (setq ivy-height 15) ;; 缓冲区高度
   (setq ivy-count-format "%d/%d") ;; 匹配总量统计
+  (setq ivy-re-builders-alist ;; 模糊查询
+      '((t . ivy--regex-plus)))
+
   ; (setq ivy-fzf-path ':)
   ;;(setq ivy-use-virutal-buffers t)
   ;;(setq ivy-initial-inputs-alist nil)
