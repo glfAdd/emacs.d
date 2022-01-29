@@ -43,6 +43,9 @@
 ;; 模糊搜索框架
 (require 'init-search)
 
+;; unuse - find file in project
+; (require 'init-project)
+
 ;; git
 (require 'init-git)
 
