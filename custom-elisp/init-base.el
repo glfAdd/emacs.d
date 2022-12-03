@@ -1,11 +1,13 @@
-(push '(menu-bar-lines . 0) default-frame-alist) ; 隐藏菜单栏
-(push '(tool-bar-lines . 0) default-frame-alist) ; 隐藏工具栏
-(push '(vertical-scroll-bars) default-frame-alist) ; 隐藏滚动条
+;; 字体
 
+
+(menu-bar-mode -1) ; 隐藏菜单栏
+(tool-bar-mode -1) ; 隐藏工具栏
+(scroll-bar-mode -1) ; 隐藏滚动条
+(setq inhibit-startup-screen t) ; 隐藏欢迎页面
 
 (setq display-line-numbers-type 'relative) ; 行号类型: relative(相对行号), visual, t
 (setq make-backup-files nil)                 ; 关闭文件自动备份
-(setq gc-cons-threshold most-positive-fixnum) ; 设置垃圾回收阈值, 加速启动速度
 
 (setq default-buffer-file-coding-system 'utf-8) ; 设置系统的编码
 (prefer-coding-system 'utf-8) 
@@ -29,6 +31,5 @@
 (defalias 'yes-or-no-p 'y-or-n-p) ;; 用 y/n 来代替 yes/no
 
 
-;; 对外暴露的名
 (provide 'init-base)
 

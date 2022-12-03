@@ -1,83 +1,66 @@
 ; 添加配置路径
+(add-to-list 'load-path (concat user-emacs-directory "custom-elisp"))
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
 
 (require 'init-package)
 (require 'init-base)
+
 (require 'init-ui)
+(require 'init-doom-modeline) ; 底部状态栏
 
+;; ;; Displays the key bindings
+;; (require 'init-which-key)
 
-;; beautify mode line
-(require 'init-mode-line)
+;; ;; Change window
+;; (require 'init-window)
 
-;; Displays the key bindings
-(require 'init-which-key)
+;; ;; tab change
+;; (require 'init-tab)
 
-;; Change window
-(require 'init-window)
+;; ;; Undo list
+;; (require 'init-undo-tree)
 
-;; tab change
-(require 'init-tab)
+;; ;; File manger
+;; (require 'init-filemanager)
 
-;; Undo list
-(require 'init-undo-tree)
+;; ;; Evil 
+;; ;(require 'init-vim)
 
-;; File manger
-(require 'init-filemanager)
+;; ;; Emacs tool 
+;; (require 'init-tool)
 
-;; Evil 
-;(require 'init-vim)
+;; ;; Streamline the operation
+;; (require 'init-ivy)
 
-;; Emacs tool 
-(require 'init-tool)
+;; ;; 模糊搜索框架
+;; (require 'init-search)
 
-;; Streamline the operation
-(require 'init-ivy)
+;; ;; unuse - find file in project
+;; ; (require 'init-project)
 
-;; 模糊搜索框架
-(require 'init-search)
+;; ;; git
+;; (require 'init-git)
 
-;; unuse - find file in project
-; (require 'init-project)
+;; ;; Code completion
+;; (require 'init-lsp)
+;; (require 'init-lsp-python)
+;; (require 'init-lsp-java)
 
-;; git
-(require 'init-git)
+;; ;; Code debug
+;; (require 'init-dap)
+;; (require 'init-dap-python)
+;; (require 'init-dap-java)
 
-;; Code completion
-(require 'init-lsp)
-(require 'init-lsp-python)
-(require 'init-lsp-java)
+;; ;; language chekc (是不是已经安装了)
+;; (require 'init-check)
+;; (require 'init-check-python)
+;; (require 'init-check-java)
 
-;; Code debug
-(require 'init-dap)
-(require 'init-dap-python)
-(require 'init-dap-java)
+;; ;; yasnippet
+;; (require 'init-code-block)
 
-;; language chekc (是不是已经安装了)
-(require 'init-check)
-(require 'init-check-python)
-(require 'init-check-java)
+;; ;; company
+;; (require 'init-code-block)
 
-;; yasnippet
-(require 'init-code-block)
-
-;; company
-(require 'init-code-block)
-
-;; keymapping
-(require 'init-keymapping)
-
-
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(dashboard which-key use-package undo-tree smart-mode-line pyvenv python-mode py-isort neotree lsp-ui lsp-python-ms lsp-pyright lsp-ivy gruvbox-theme dap-mode counsel blacken benchmark-init)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; ;; keymapping
+;; (require 'init-keymapping)
