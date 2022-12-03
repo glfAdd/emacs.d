@@ -1,3 +1,8 @@
+(push '(menu-bar-lines . 0) default-frame-alist) ; 隐藏菜单栏
+(push '(tool-bar-lines . 0) default-frame-alist) ; 隐藏工具栏
+(push '(vertical-scroll-bars) default-frame-alist) ; 隐藏滚动条
+
+
 (setq display-line-numbers-type 'relative) ; 行号类型: relative(相对行号), visual, t
 (setq make-backup-files nil)                 ; 关闭文件自动备份
 (setq gc-cons-threshold most-positive-fixnum) ; 设置垃圾回收阈值, 加速启动速度
@@ -23,42 +28,7 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p) ;; 用 y/n 来代替 yes/no
 
-;; 添加源
-(setq package-archives '( 
-    ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-    ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-    ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/"))
-)
 
-
-(setq package-check-signature nil) ; 签名校验
-(require 'package) ; 初始化包管理器
-
-; (package-initialize)
-; (package-refresh-contents)
-(unless (bound-and-true-p package--initialized)
-    (package-initialize)
-)
-(unless package-archive-contents ; 刷新软件源
-    (package-refresh-contents)
-)
-
-
-;; 使用 use-package 管理扩展
-(unless (package-installed-p 'use-package) 
-    (package-refresh-contents) 
-    (package-install 'use-package)
-)
-
-;; use-package 全局设置
-(eval-and-compile 
-    (setq use-package-always-ensure t)
-    (setq use-package-always-defer t)
-    (setq use-package-always-demand nil) 
-    (setq use-package-expand-minimally t) 
-    (setq use-package-verbose t)
-)
-(require 'use-package)
-
+;; 对外暴露的名
 (provide 'init-base)
 

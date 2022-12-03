@@ -1,17 +1,10 @@
 ; 添加配置路径
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
 
-;; Base configuration
+(require 'init-package)
 (require 'init-base)
+(require 'init-ui)
 
-;; icon
-(require 'init-icon)
-
-;; Theme
-(require 'init-theme)
-
-;; Welcome dashboard
-(require 'init-dashboard)
 
 ;; beautify mode line
 (require 'init-mode-line)
