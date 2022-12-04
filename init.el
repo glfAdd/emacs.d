@@ -7,9 +7,9 @@
 
 (require 'init-ui)
 (require 'init-doom-modeline) ; 底部状态栏
-
-;; ;; Displays the key bindings
-;; (require 'init-which-key)
+(require 'init-which-key) ; Displays the key bindings
+(require 'init-evil) ; vim 模拟器
+;; (require 'init-ivy) ; 补全
 
 ;; ;; Change window
 ;; (require 'init-window)
@@ -23,14 +23,10 @@
 ;; ;; File manger
 ;; (require 'init-filemanager)
 
-;; ;; Evil 
-;; ;(require 'init-vim)
 
 ;; ;; Emacs tool 
 ;; (require 'init-tool)
 
-;; ;; Streamline the operation
-;; (require 'init-ivy)
 
 ;; ;; 模糊搜索框架
 ;; (require 'init-search)

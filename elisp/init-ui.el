@@ -22,22 +22,21 @@
 
 ;; ----------------------------------------------
 ;; Welcome dashboard
-;; ----------------------------------------------
 ;; banner 在 -nw 模式下无法显示图片
-(use-package dashboard
-  :init
-    (dashboard-setup-startup-hook)
-  :config
-    (setq dashboard-set-init-info t)
-    (setq dashboard-banner-logo-title "Highlord Mograine . The Ashbringer") ; 签名
-    ;; (setq dashboard-init-info "Highlord Mograine . The Ashbringer") ; logo title 下文字, 不设置就显示加载时间
-    (setq dashboard-set-footer nil) ; 底部文字
-    ;; (setq dashboard-startup-banner "C:\\Users\\xxx\\AppData\\Roaming\\.emacs.d\\banner\\old6.gif") ; banner
-    (setq dashboard-startup-banner "~/.emacs.d/banner/old6.gif")"
-    (setq dashboard-center-content t) ; 居中
-    (setq dashboard-set-heading-icons t)
-    (setq dashboard-set-file-icons t)
-)
-
+;; ----------------------------------------------
+;; (use-package dashboard
+;;   :init
+;;     (dashboard-setup-startup-hook)
+;;   :config
+;;     (setq dashboard-set-init-info t)
+;;     (setq dashboard-banner-logo-title "Highlord Mograine . The Ashbringer") ; 签名
+;;     ;; (setq dashboard-init-info "Highlord Mograine . The Ashbringer") ; logo title 下文字, 不设置就显示加载时间
+;;     ;; (setq dashboard-set-footer nil) ; 随机脚注
+;;     ;; (setq dashboard-startup-banner "C:\\Users\\xxx\\AppData\\Roaming\\.emacs.d\\banner\\old6.gif") ; banner
+;;     (setq dashboard-startup-banner "~/.emacs.d/banner/old6.gif")
+;;     (setq dashboard-center-content t) ; 居中
+;;     (setq dashboard-set-heading-icons t) ; 添加图标
+;;     (setq dashboard-set-file-icons t) ; 添加图标
+;; )
 
 (provide 'init-ui)
