@@ -1,6 +1,7 @@
+;; ----------------------------------------------
 ;; 代码, 命令 补全
-
-; Emacs 下 LSP 协议库
+;; ----------------------------------------------
+;; Emacs 下 LSP 协议库, 核心
 (use-package lsp-mode 
   :init
   (setq lsp-keymap-prefix "C-c l")
@@ -8,20 +9,25 @@
   ((python-mode . lsp))
 )
 
+
 (use-package lsp-ui
   :init
-  :after lsp-mode
+  :after 
+    lsp-mode
   :config
-  (setq lsp-ui-sideline-delay 0.1) ; 在显示边线之前等待几秒钟
+    (setq lsp-ui-sideline-delay 0.1) ; 在显示边线之前等待几秒钟
   :commands
-  lsp-ui-mode
+    lsp-ui-mode
 )
 
-(use-package lsp-ivy ; 补全系统、部分常用命令、搜索功能
-  :init
-  :commands
-  lsp-ivy-workspace-symbol
-)
+
+;; 补全系统、部分常用命令、搜索功能
+;; (use-package lsp-ivy
+;;   :init
+;;   :commands
+;;     lsp-ivy-workspace-symbol
+;; )
+
 
 (use-package lsp-treemacs
   :init

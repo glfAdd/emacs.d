@@ -9,7 +9,13 @@
 (require 'init-doom-modeline) ; 底部状态栏
 (require 'init-which-key) ; Displays the key bindings
 (require 'init-evil) ; vim 模拟器
-;; (require 'init-ivy) ; 补全
+(require 'init-ivy) ; 补全
+(require 'init-avy) 
+
+;; Code completion
+(require 'init-lsp)
+;; (require 'init-lsp-python)
+;; (require 'init-lsp-java)
 
 ;; ;; Change window
 ;; (require 'init-window)
@@ -37,10 +43,6 @@
 ;; ;; git
 ;; (require 'init-git)
 
-;; ;; Code completion
-;; (require 'init-lsp)
-;; (require 'init-lsp-python)
-;; (require 'init-lsp-java)
 
 ;; ;; Code debug
 ;; (require 'init-dap)
