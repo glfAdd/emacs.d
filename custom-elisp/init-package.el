@@ -3,6 +3,7 @@
 ;; ----------------------------------------------
 (setq package-check-signature nil) ; 禁用签名校验
 (setq package-archives '(
+    ;; ("elpy" . "https://jorgenschaefer.github.io/packages/")
     ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
     ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
     ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/"))
@@ -22,14 +23,14 @@
 (unless (package-installed-p 'use-package) 
     (package-refresh-contents) 
     (package-install 'use-package))
-
 ;; use-package 全局设置, 安装时不用每次都设置
 (eval-and-compile 
     (setq use-package-always-ensure t) ; 确保一定安装
     (setq use-package-always-defer t) ; 延迟加载
     (setq use-package-always-demand nil) 
     (setq use-package-expand-minimally t) 
-    (setq use-package-verbose t))
+    (setq use-package-verbose t)
+)
 
 
 (provide 'init-package)
