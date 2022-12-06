@@ -1,14 +1,6 @@
 ;; ----------------------------------------------
 ;; python 开发环境
 ;; ----------------------------------------------
-
-
-;; (use-package elpy
-;;   :init
-;;   (advice-add 'python-mode :before 'elpy-enable)
-;; )
-
-
 (use-package python-mode
   :mode (("SConstruct\\'" . python-mode)
          ("SConscript\\'" . python-mode)

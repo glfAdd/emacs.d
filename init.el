@@ -18,7 +18,7 @@
 ;; (require 'init-lsp-java)
 
 
-(require 'init-elpy) ; python 开发环境
+;; (require 'init-elpy) ; python 开发环境
 
 
 ;; ;; Change window
@@ -72,7 +72,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(elpy which-key use-package undo-tree neotree lsp-ui lsp-ivy gruvbox-theme flycheck doom-modeline dashboard dap-mode benchmark-init all-the-icons))
+   '(ipython-shell-send python-mode elpy which-key use-package undo-tree neotree lsp-ui lsp-ivy gruvbox-theme flycheck doom-modeline dashboard dap-mode benchmark-init all-the-icons))
  '(warning-suppress-log-types '(((flymake flymake)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
