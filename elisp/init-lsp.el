@@ -11,60 +11,76 @@
 ;; lsp: 集成代码开发环境
 ;; ----------------------------------------------
 (use-package lsp-mode
-  :hook
-    (python-mode . lsp-deferred) ; 表示启用 python-mode 时调用 lsp, 延迟加载
-  :commands 
-    lsp
+    :init
+    ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+    (setq lsp-keymap-prefix "C-c l")
+    :hook (
+        (python-mode . lsp-deferred) ; 表示启用 python-mode 时调用 lsp, 延迟加载
+        ;; if you want which-key integration
+        (lsp-mode . lsp-enable-which-key-integration)
+    )
+    :commands
+    (lsp lsp-deferred)
+)
+
+;; optionally
+(use-package lsp-ui
+    :init
+    :commands lsp-ui-mode
+)
+;; if you are helm user
+(use-package helm-lsp :commands helm-lsp-workspace-symbol)
+;; if you are ivy user
+(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+
+;; optionally if you want to use debugger
+(use-package dap-mode)
+;; (use-package dap-LANGUAGE) to load the dap adapter for your language
+
+;; optional if you want which-key integration
+(use-package which-key
+    :config
+    (which-key-mode))
+
+
+
+(use-package company
+    ;:init (global-company-mode)
+    :config
+    (global-company-mode t)
+    (setq company-minimum-prefix-length 1) ; 只需敲 1 个字母就开始进行自动补全
+    (setq company-tooltip-align-annotations t)
+    (setq company-idle-delay 0.0)
+    (setq company-show-numbers t) ;; 给选项编号 (按快捷键 M-1、M-2 等等来进行选择).
+    (setq company-selection-wrap-around t)
+    (setq company-transformers '(company-sort-by-occurrence)) ; 根据选择的频率进行排序，读者如果不喜欢可以去掉
+    (setq company-backends '(company-capf
+                              company-files
+                              company-jedi
+                              company-keywords
+                              company-yasnippet))
+)
+
+(use-package company-jedi
+  :ensure t
+  :commands (company-jedi)
+  :after (company python-mode))
+;; 
+(use-package company-box
+  :ensure t
+  :if window-system
+  :hook (company-mode . company-box-mode)
 )
 
 
 ;; ----------------------------------------------
 ;; 集成 flycheck 和更高级别的 UI 模块
 ;; ----------------------------------------------
-(use-package lsp-ui
-  :ensure t
-  :custom-face
-  (lsp-ui-doc-background ((t (:background ni))))
-  :init (setq lsp-ui-doc-enable t
-              lsp-ui-doc-include-signature t               
-
-              lsp-enable-snippet nil
-              lsp-ui-sideline-enable nil
-              lsp-ui-peek-enable nil
-
-              lsp-ui-doc-position              'at-point
-              lsp-ui-doc-header                nil
-              lsp-ui-doc-border                "white"
-              lsp-ui-doc-include-signature     t
-              lsp-ui-sideline-update-mode      'point
-              lsp-ui-sideline-delay            1
-              lsp-ui-sideline-ignore-duplicate t
-              lsp-ui-peek-always-show          t
-              lsp-ui-flycheck-enable           nil
-              )
-  :bind (:map lsp-ui-mode-map
-              ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
-              ([remap xref-find-references] . lsp-ui-peek-find-references)
-              ("C-c u" . lsp-ui-imenu))
-  :config
-  (setq lsp-ui-sideline-ignore-duplicate t)
-  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
-
 
 ;; ----------------------------------------------
 ;; 代码补全
 ;; ----------------------------------------------
-(use-package company-lsp
-    :config
-    ;; 设置 company-lsp 为后端
-    (push 'company-lsp company-backends))
-
-
-(use-package helm-lsp :commands helm-lsp-workspace-symbol)
-(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
-
-
-
 
 
 (provide 'init-lsp)

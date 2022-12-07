@@ -2,7 +2,7 @@
 ;; 图标字体
 ;; ----------------------------------------------
 (use-package all-the-icons
-  :if(display-graphic-p)
+    :if(display-graphic-p)
 )
 
 
@@ -10,13 +10,24 @@
 ;; Theme
 ;; ----------------------------------------------
 (use-package gruvbox-theme 
-  :init 
+    :init 
     ;; (load-theme 'gruvbox-dark-soft t)
     ;; (load-theme 'gruvbox-dark-medium t)
     ;; (load-theme 'gruvbox-dark-hard t)
     ;; (load-theme 'gruvbox-light-medium t)
     ;; (load-theme 'gruvbox-light-soft t)
-    (load-theme 'gruvbox-light-hard t)
+    (load-theme 'gruvbox-light-hard t))
+
+
+;; ----------------------------------------------
+;; mode line
+;; ----------------------------------------------
+(use-package smart-mode-line 
+    :init 
+    (setq sml/no-confirm-load-theme t) 
+    (setq sml/theme 'respectful) 
+    ;; (setq sml/theme 'dark)
+    ;; (setq sml/theme 'light)
 )
 
 

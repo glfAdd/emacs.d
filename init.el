@@ -8,11 +8,11 @@
 (require 'init-base)
 
 (require 'init-ui)
-(require 'init-doom-modeline) ; 底部状态栏
-(require 'init-which-key) ; Displays the key bindings
-(require 'init-evil) ; vim 模拟器
-(require 'init-ivy) ; 补全
-(require 'init-avy) 
+;(require 'init-doom-modeline) ; 底部状态栏
+;(require 'init-which-key) ; Displays the key bindings
+;(require 'init-evil) ; vim 模拟器
+;(require 'init-ivy) ; 补全
+;(require 'init-avy) 
 
 ;; Code completion
 (require 'init-lsp)
