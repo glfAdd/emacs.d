@@ -1,54 +1,70 @@
 ;; ----------------------------------------------
-;; 代码, 命令 补全
+;; lsp: 集成代码开发环境
 ;; ----------------------------------------------
-;; Emacs 下 LSP 协议库, 核心
-(use-package lsp-mode 
-  :init
-  (setq lsp-keymap-prefix "C-c l")
+
+;; python 自动
+(setq lsp-pyls-server-command "~/.local/bin/pyls")			
+(setq lsp-pylsp-server-command "~/.local/bin/pylsp")			
+
+
+;; ----------------------------------------------
+;; lsp: 集成代码开发环境
+;; ----------------------------------------------
+(use-package lsp-mode
   :hook
-  ((python-mode . lsp))
+    (python-mode . lsp-deferred) ; 表示启用 python-mode 时调用 lsp, 延迟加载
+  :commands 
+    lsp
 )
 
 
-;; (use-package lsp-ui
-;;   :init
-;;   :after 
-;;     lsp-mode
-;;   :config
-;;     (setq lsp-ui-sideline-delay 0.1) ; 在显示边线之前等待几秒钟
-;;   :commands
-;;     lsp-ui-mode
-;; )
+;; ----------------------------------------------
+;; 集成 flycheck 和更高级别的 UI 模块
+;; ----------------------------------------------
+(use-package lsp-ui
+  :ensure t
+  :custom-face
+  (lsp-ui-doc-background ((t (:background ni))))
+  :init (setq lsp-ui-doc-enable t
+              lsp-ui-doc-include-signature t               
+
+              lsp-enable-snippet nil
+              lsp-ui-sideline-enable nil
+              lsp-ui-peek-enable nil
+
+              lsp-ui-doc-position              'at-point
+              lsp-ui-doc-header                nil
+              lsp-ui-doc-border                "white"
+              lsp-ui-doc-include-signature     t
+              lsp-ui-sideline-update-mode      'point
+              lsp-ui-sideline-delay            1
+              lsp-ui-sideline-ignore-duplicate t
+              lsp-ui-peek-always-show          t
+              lsp-ui-flycheck-enable           nil
+              )
+  :bind (:map lsp-ui-mode-map
+              ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
+              ([remap xref-find-references] . lsp-ui-peek-find-references)
+              ("C-c u" . lsp-ui-imenu))
+  :config
+  (setq lsp-ui-sideline-ignore-duplicate t)
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 
 
-;; ;; 补全系统、部分常用命令、搜索功能
-;; (use-package lsp-ivy
-;;   :init
-;;   :commands
-;;     lsp-ivy-workspace-symbol
-;; )
+;; ----------------------------------------------
+;; 代码补全
+;; ----------------------------------------------
+(use-package company-lsp
+    :config
+    ;; 设置 company-lsp 为后端
+    (push 'company-lsp company-backends))
 
 
-;; (use-package lsp-treemacs
-;;   :init
-;;   :commands
-;;   lsp-treemacs-errors-list
-;; )
+(use-package helm-lsp :commands helm-lsp-workspace-symbol)
+(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 
 
-;; ;; 全文补全框架
-;; (use-package company
-;;   :config
-;;   (global-company-mode t)
-;;   (setq company-idle-delay 0.3) ; 输入时, 代码补全延迟
-;;   (setq company-backends
-;;     '((company-files
-;;       company-keywords
-;;       company-capf
-;;       company-yasnippet
-;;       )
-;;       (company-abbrev company-dabbrev)))
-;; )
+
 
 
 (provide 'init-lsp)

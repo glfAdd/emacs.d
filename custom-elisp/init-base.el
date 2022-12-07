@@ -28,7 +28,7 @@
 (add-hook 'prog-mode-hook #'show-paren-mode) ; 编程模式下，光标在括号上时高亮另一个括号
 (add-hook 'prog-mode-hook #'hs-minor-mode)   ; 编程模式下，可以折叠代码块
 
-(defalias 'yes-or-no-p 'y-or-n-p) ;; 用 y/n 来代替 yes/no
+(defalias 'yes-or-no-p 'y-or-n-p) ; 用 y/n 来代替 yes/no
 
 
 (provide 'init-base)

@@ -2,6 +2,8 @@
 (add-to-list 'load-path (concat user-emacs-directory "custom-elisp"))
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
 
+
+(require 'init-env) ; 环境配置
 (require 'init-package)
 (require 'init-base)
 
