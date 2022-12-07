@@ -14,13 +14,9 @@
 ;(require 'init-ivy) ; 补全
 ;(require 'init-avy) 
 
-;; Code completion
+
 (require 'init-lsp)
 (require 'init-lsp-python)
-;; (require 'init-lsp-java)
-
-
-;; (require 'init-elpy) ; python 开发环境
 
 
 ;; ;; Change window
