@@ -31,5 +31,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p) ; 用 y/n 来代替 yes/no
 
 
+
+
 (provide 'init-base)
 

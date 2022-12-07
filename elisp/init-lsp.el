@@ -1,7 +1,3 @@
-;; ----------------------------------------------
-;; lsp: 集成代码开发环境
-;; ----------------------------------------------
-
 ;; python 自动
 (setq lsp-pyls-server-command "~/.local/bin/pyls")			
 (setq lsp-pylsp-server-command "~/.local/bin/pylsp")			
@@ -23,18 +19,15 @@
     (lsp lsp-deferred)
 )
 
-;; optionally
+
 (use-package lsp-ui
     :init
     :commands lsp-ui-mode
 )
-;; if you are helm user
+
 (use-package helm-lsp :commands helm-lsp-workspace-symbol)
-;; if you are ivy user
 (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
 (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
-
-;; optionally if you want to use debugger
 (use-package dap-mode)
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 
@@ -46,9 +39,9 @@
 
 
 (use-package company
-    ;:init (global-company-mode)
-    :config
+    :init
     (global-company-mode t)
+    :config
     (setq company-minimum-prefix-length 1) ; 只需敲 1 个字母就开始进行自动补全
     (setq company-tooltip-align-annotations t)
     (setq company-idle-delay 0.0)

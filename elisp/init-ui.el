@@ -12,11 +12,12 @@
 (use-package gruvbox-theme 
     :init 
     ;; (load-theme 'gruvbox-dark-soft t)
-    ;; (load-theme 'gruvbox-dark-medium t)
+    (load-theme 'gruvbox-dark-medium t)
     ;; (load-theme 'gruvbox-dark-hard t)
     ;; (load-theme 'gruvbox-light-medium t)
     ;; (load-theme 'gruvbox-light-soft t)
-    (load-theme 'gruvbox-light-hard t))
+    ;; (load-theme 'gruvbox-light-hard t)
+)
 
 
 ;; ----------------------------------------------

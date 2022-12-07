@@ -16,7 +16,7 @@
 
 ;; Code completion
 (require 'init-lsp)
-;; (require 'init-lsp-python)
+(require 'init-lsp-python)
 ;; (require 'init-lsp-java)
 
 
