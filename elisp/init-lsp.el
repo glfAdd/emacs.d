@@ -7,19 +7,16 @@
     :config
     (setq company-minimum-prefix-length 1) ; 只需敲 1 个字母就开始进行自动补全
     (setq company-tooltip-align-annotations t)
-    (setq company-idle-delay 0.0)
+    (setq company-idle-delay 0.2)
     (setq company-show-numbers t) ;; 给选项编号 (按快捷键 M-1、M-2 等等来进行选择).
     (setq company-selection-wrap-around t)
     (setq company-transformers '(company-sort-by-occurrence)) ; 根据选择的频率进行排序，读者如果不喜欢可以去掉
 ) 
 
-
 (use-package company-box
     :if window-system
     :hook (company-mode . company-box-mode)
 )
-
-
 ;; ----------------------------------------------
 ;; lsp
 ;; ----------------------------------------------
@@ -47,25 +44,68 @@
     (setq lsp-ui-doc-enable nil)
 )
 
-
 (use-package lsp-ivy
     :ensure t
     :after (lsp-mode)
 )
-
 
 ;; 语法检测
 (use-package flycheck
     :ensure t
     :init (global-flycheck-mode)
 )
-
-(use-package pyvenv
+;; ----------------------------------------------
+;; python
+;; ----------------------------------------------
+;(setq lsp-pyls-server-command "~/.local/bin/pyls")
+;(setq lsp-pylsp-server-command "~/.local/bin/pylsp")
+(use-package lsp-pyright
   :ensure t
-  :config
-  (setenv "WORKON_HOME" "~/.pyenv/versions/p3710-emacs")
-  (setq python-shell-interpreter "python3")
-  (pyvenv-mode t))
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp-deferred))) ; lsp-deferred lsp
+)
 
+;(use-package lsp-python-ms
+;    :ensure t
+;    :hook (python-mode . (lambda ()
+;                            (require 'lsp-python-ms)
+;                            (lsp)))
+;    :init
+;    (setq lsp-python-ms-executable (executable-find "python-language-server"))
+;)
 
+;(use-package python-mode
+;    :hook (python-mode . lsp-deferred)
+;    :custom
+;    (dap-python-debugger 'debugpy)
+;    :config
+;    (require 'dap-python)
+;)
+
+;(use-package py-isort
+;    :after python
+;    :hook ((python-mode . pyvenv-mode)
+;    (before-save . py-isort-before-save))
+;)
+
+;(use-package pyvenv
+;    :after python-mode
+;    :config
+;    (pyvenv-mode 1)
+;)
+
+;; python 虚拟环境切换管理
+(use-package pyvenv
+    :config
+    (setenv "WORKON_HOME" "~/.pyenv/versions")
+    (setq python-shell-interpreter "python3")
+    (pyvenv-mode t)
+)
+
+;(use-package blacken
+;    :delight
+;    :hook (python-mode . blacken-mode)
+;    :custom (blacken-line-length 79)
+;)
 (provide 'init-lsp)

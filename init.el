@@ -3,10 +3,8 @@
 (add-to-list 'load-path (concat user-emacs-directory "elisp"))
 
 
-(require 'init-env) ; 环境配置
 (require 'init-package)
 (require 'init-base)
-
 (require 'init-ui)
 ;(require 'init-doom-modeline) ; 底部状态栏
 ;(require 'init-which-key) ; Displays the key bindings
@@ -14,9 +12,7 @@
 ;(require 'init-ivy) ; 补全
 ;(require 'init-avy) 
 
-
 (require 'init-lsp)
-(require 'init-lsp-python)
 
 
 ;; ;; Change window
