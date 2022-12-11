@@ -18,9 +18,8 @@
 ;                            ))
 ) 
 
-
 (use-package company-box
-    ;:if window-system
+    :if window-system
     :hook (company-mode . company-box-mode)
 )
 
@@ -44,7 +43,6 @@
     (setq lsp-idle-delay 0.6)
     (add-hook 'lsp-mode-hook 'lsp-ui-mode)
 )
-
 
 (use-package lsp-ui
     :config
@@ -103,17 +101,16 @@
 ;    (before-save . py-isort-before-save))
 ;)
 
+;; python 虚拟环境切换管理
 ;(use-package pyvenv
 ;    :after python-mode
 ;    :config
 ;    (pyvenv-mode 1)
 ;)
 
-;; python 虚拟环境切换管理
 (use-package pyvenv
     :init
     (setenv "WORKON_HOME" "~/.pyenv/versions")
-
 
     ;:config
     ;(setenv "WORKON_HOME" "~/.pyenv/versions")
@@ -126,14 +123,6 @@
 ;    :hook (python-mode . blacken-mode)
 ;    :custom (blacken-line-length 79)
 ;)
-
-;; ----------------------------------------------
-;; c
-;; ----------------------------------------------
-
-;; ----------------------------------------------
-;; go
-;; ----------------------------------------------
 
 
 (provide 'init-lsp)

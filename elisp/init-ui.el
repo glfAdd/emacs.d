@@ -6,6 +6,7 @@
 )
 
 
+
 ;; ----------------------------------------------
 ;; Theme
 ;; ----------------------------------------------
@@ -20,16 +21,15 @@
 )
 
 
+
 ;; ----------------------------------------------
-;; mode line
+;; mode line 底部状态栏
 ;; ----------------------------------------------
-(use-package smart-mode-line 
-    :init 
-    (setq sml/no-confirm-load-theme t) 
-    (setq sml/theme 'respectful) 
-    ;; (setq sml/theme 'dark)
-    ;; (setq sml/theme 'light)
+(use-package doom-modeline
+    ; :init (doom-modeline-mode 1)
+    :hook (after-init . doom-modeline-mode)
 )
+
 
 
 ;; ----------------------------------------------
