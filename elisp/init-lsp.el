@@ -20,9 +20,10 @@
 
 
 (use-package company-box
-    :if window-system
+    ;:if window-system
     :hook (company-mode . company-box-mode)
 )
+
 
 
 ;; ----------------------------------------------
