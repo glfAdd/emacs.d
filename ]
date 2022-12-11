@@ -1,5 +1,5 @@
 ;;; ----------------------------------------------
-;;; 测试启动耗时 (不正常)
+;;; 测试启动耗时
 ;;; ----------------------------------------------
 ;(use-package benchmark-init 
 ;    :config
@@ -8,79 +8,21 @@
 ;)
 
 
-
-;;; ----------------------------------------------
-;;; vi layer for Emacs
-;;; ----------------------------------------------
-;(use-package evil
-;    :init
-;    (setq evil-vsplit-window-right t)
-;    (setq evil-split-window-below t)
-;    (setq evil-want-C-u-scroll t)
-;    (setq evil-want-C-i-jump nil)
-;    :config
-;    (evil-mode 1)
-;)
-
-
-
-;; ----------------------------------------------
-;; 文件目录
-;; ----------------------------------------------
-(use-package neotree
-    :init
-    :config
-    (setq-default neo-show-hidden-files nil) ; 默认不显示隐藏文件
-    :custom
-    (neo-theme 'nerd2) ; 图标样式
-)
-
-
-
 ;; ----------------------------------------------
 ;; 底部状态栏
 ;; ----------------------------------------------
 (use-package doom-modeline
-    ; :init (doom-modeline-mode 1)
-    :hook (after-init . doom-modeline-mode)
-    :config
-    (setq doom-modeline-height 45) ; 高度
+  :init
+    (doom-modeline-mode 1)
+  ;; :hook
+  ;;   (after-init . doom-modeline-init)
+  :config
+    (setq doom-modeline-height 25) ; 高度
     (setq doom-modeline-bar-width 4) ; 宽度
-    (setq doom-modeline-icon t)
-    (setq doom-modeline-buffer-state-icon t)
+    ;; (setq doom-modeline-icon t)
+    ;; (setq doom-modeline-buffer-state-icon t)
+
 )
-
-
-
-;; ----------------------------------------------
-;; 快捷键提示
-;; ----------------------------------------------
-(use-package which-key
-    :config
-    (which-key-mode)
-    (setq which-key-idle-delay 1)
-    (setq which-key-popup-type 'side-window) ; minibuffer minibuffer minibuffer
-    (setq which-key-side-window-location 'bottom) ; left right bottom
-    (setq which-key-side-window-max-width 0.33)
-    (setq which-key-side-window-max-height 0.25)
-    (setq which-key-frame-max-width 60)
-    (setq which-key-frame-max-height 20)
-    (setq which-key-idle-delay 0.8)
-    (setq which-key-max-description-length 27) ; 命令最大宽度
-)
-
-
-
-;; ----------------------------------------------
-;; window 跳转
-;; ----------------------------------------------
-(use-package ace-window
-;    :config
-;    (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
-    :bind (("C-x o" . 'ace-window))
-)
-
-
 
 ;;; ----------------------------------------------
 ;;; tab 切换状态栏
@@ -234,6 +176,14 @@
 ;; )
 ;
 ;
+;;; ----------------------------------------------
+;;; window 跳转
+;;; ----------------------------------------------
+;(use-package ace-window
+;  :config
+;  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+;  :bind
+;)
 ;
 ;
 ;;; ----------------------------------------------
@@ -255,6 +205,16 @@
 ;)
 ;
 ;
+;;; ----------------------------------------------
+;;; 文件目录
+;;; ----------------------------------------------
+;(use-package neotree
+;  :init
+;  :config
+;  (setq-default neo-show-hidden-files nil) ;; 默认不显示隐藏文件
+;  :custom
+;  (neo-theme 'nerd2) ;; 图标样式
+;)
 ;
 ;
 ;;; ----------------------------------------------
@@ -286,6 +246,40 @@
 ;)
 ;
 ;
-
+;;; ----------------------------------------------
+;;; vi layer for Emacs
+;;; ----------------------------------------------
+;(use-package evil
+;  :init
+;    (setq evil-vsplit-window-right t)
+;    (setq evil-split-window-below t)
+;    (setq evil-want-C-u-scroll t)
+;    (setq evil-want-C-i-jump nil)
+;  :config
+;    (evil-mode 1)
+;)
+;
+;
+;;; ----------------------------------------------
+;;; 快捷键提示
+;;; ----------------------------------------------
+;(use-package which-key
+;  :config
+;    (which-key-mode)
+;    (setq which-key-idle-delay 1)
+;    (setq which-key-popup-type 'side-window) ; minibuffer minibuffer minibuffer
+;    (setq which-key-side-window-location 'bottom) ; left right bottom
+;    (setq which-key-side-window-max-width 0.33)
+;    (setq which-key-side-window-max-height 0.25)
+;    (setq which-key-frame-max-width 60)
+;    (setq which-key-frame-max-height 20)
+;
+;    (setq which-key-idle-delay 0.8)
+;    (setq which-key-max-description-length 27) ; 命令最大宽度
+;)
+;
+;
+;
+;
 
 (provide 'init-tool)
